@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="X-UA-Compatible">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Casino</title>
+    <link rel="icon" type="image/png" href="/assets/images/chery.png" />
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <main class="main">
+        <section class="slots">
+            <div class="container">
+                <ul class="slots__list" id="slots__list">
+                    <li class="slots__item">
+                        <div class="slots__bg">
+                            <img src="assets/images/slot-up.png" alt="slot">
+                        </div>
+                        <div class="slots__content">
+                            <h3 class="slots__period">Daily</h3>
+                            <p class="slots__timer">01:35:10</p>
+                            <span class="slots__prize">100</span>
+                            <ul class="slots__coin-list">
+                                <li class="slots__coin-item">
+                                </li>
+                                <li class="slots__coin-item">
+                                </li>
+                                <li class="slots__coin-item">
+                                </li>
+                                <li class="slots__coin-item">
+                                </li>
+                                <li class="slots__coin-item">
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="slots__decor">
+                            <img src="assets/images/clever.png" width="90" height="80" alt="clover">
+                        </div>
+                    </li>
+                    <li class="slots__item">
+                        <div class="slots__bg">
+                            <img src="assets/images/slot-up.png" alt="slot">
+                        </div>
+                        <div class="slots__content" id="coin">
+                            <h3 class="slots__period">Weekly</h3>
+                            <p class="slots__timer">00:00:13</p>
+                            <span class="slots__prize win">500</span>
+                            <ul class="slots__coin-list slot__coin-list--animated">
+                                <li class="slots__coin-item">
+                                </li>
+                                <li class="slots__coin-item">
+                                </li>
+                                <li class="slots__coin-item">
+                                </li>
+                                <li class="slots__coin-item">
+                                </li>
+                                <li class="slots__coin-item">
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="slots__decor">
+                            <img src="assets/images/clever.png" width="72" height="65" alt="clover">
+                        </div>
+                    </li>
+                    <li class="slots__item">
+                        <div class="slots__bg">
+                            <img src="assets/images/slot-up.png" alt="slot">
+                        </div>
+                        <div class="slots__content">
+                            <h3 class="slots__period">Monthly</h3>
+                            <p class="slots__timer">01:00:09</p>
+                            <span class="slots__prize">1000</span>
+                            <ul class="slots__coin-list">
+                                <li class="slots__coin-item">
+                                </li>
+                                <li class="slots__coin-item">
+                                </li>
+                                <li class="slots__coin-item">
+                                </li>
+                                <li class="slots__coin-item">
+                                </li>
+                                <li class="slots__coin-item">
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="slots__decor">
+                            <img src="assets/images/chery.png" width="90" height="100" alt="cherry">
+                        </div>
+                    </li>
+                </ul>
+                <div class="slots__decor diamond" style="top: 10%; left: 60%; animation-duration: 2.7s;">
+                    <img src="assets/images/diamant.png" width="58" height="62" alt="diamond">
+                </div>
+            </div>
+        </section>
+        <section class="podium" id="podium">
+            <div class="container">
+                <div class="podium__content">
+                    <p>the WINNER IS</p>
+                    <h3>ploni almoni</h3>
+                    <img src="assets/images/podium/stage.png" alt="">
+                </div>
+            </div>
+            <div class="podium__sofits">
+                <div class="podium__light">
+                    <img class="podium__light--left light" src="assets/images/podium/projector.png" alt="">
+                    <img class="podium__light--middle light" src="assets/images/podium/light m.png" alt="">
+                    <img class="podium__light--right light" src="assets/images/podium/light-r.png" alt="">
+                </div>
+                <div class="podium__curtain"></div>
+            </div>
+        </section>
+        <div class="rain-animation" id="rain-container">
+            <!-- Изображения дождя -->
+            <img class="raindrop" src="assets/images/rain/1.png" alt="raindrop">
+            <img class="raindrop" src="assets/images/rain/2.png" alt="raindrop">
+            <img class="raindrop" src="assets/images/rain/3.png" alt="raindrop">
+            <img class="raindrop" src="assets/images/rain/4.png" alt="raindrop">
+        </div>
+    </main>
+
+    <dialog class="overlay" id="overlayWinner">
+        <div class="overlay__content">
+            <h2 class="overlay__title">
+                the WINNER IS
+            </h2>
+        </div>
+    </dialog>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.11/lottie.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

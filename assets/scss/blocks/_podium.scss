@@ -1,0 +1,131 @@
+.podium {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background: url(../images/podium/podium-bg.jpg) no-repeat center;
+    background-size: cover;
+    transition: all 1s ease;
+    overflow: hidden;
+
+
+    &::after,
+    &::before {
+        content: '';
+        position: absolute;
+        top: -00%;
+        width: 50%;
+        height: 100%;
+        z-index: 1;
+        background: url(/assets/images/podium/photoroom.png) no-repeat center;
+        transition: all 2s ease;
+    }
+
+    &::before {
+        left: var(--before-left, 0);
+    }
+
+    &::after {
+        right: var(--after-right, 0);
+        ;
+    }
+
+    &__content {
+        padding: 150px 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: end;
+
+        & p {
+            text-transform: lowercase;
+            @include fluid-text(88, 22);
+            @include gradient;
+            background-image: linear-gradient(to bottom, #FAFF00, #33FF00, #177400);
+        }
+
+        & h3 {
+            margin: 0;
+            @include fluid-text(157, 36);
+            color: #ffffff;
+        }
+
+        & img {
+            margin-top: 120px;
+        }
+    }
+
+    &__curtain {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        width: 100%;
+        background: url(../images/podium/gobilen.png) no-repeat center;
+        background-size: cover;
+        z-index: 2;
+    }
+
+    &__sofits {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+
+
+        &::after,
+        &::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            width: 50%;
+            height: 100%;
+            background: url(/assets/images/podium/Star.png) no-repeat center;
+            transition: all 2s ease;
+
+            animation: rotateDecor 10s linear infinite;
+        }
+
+        &::before {
+            left: -10%;
+        }
+
+        &::after {
+            right: -10%;
+        }
+    }
+
+    &__light {
+        position: absolute;
+        left: 0;
+        top: -20px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        column-gap: 150px;
+
+        & img {
+            max-height: 90%;
+            transform-origin: top tops;
+            animation: lightAnimation 3s ease-in-out infinite;
+        }
+
+        &--left {
+            animation-duration: 6s !important;
+        }
+
+        &--middle {
+            margin-top: -50px;
+            animation-duration: 4s !important;
+        }
+
+        &--right {
+            animation-duration: 6s !important;
+        }
+    }
+}

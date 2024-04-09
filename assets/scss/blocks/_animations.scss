@@ -1,0 +1,62 @@
+@keyframes lightingBrightness {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.1;
+    }
+}
+
+@keyframes rotateDecor {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(45deg);
+    }
+
+    75% {
+        transform: rotate(-45deg);
+    }
+}
+
+@keyframes rotateDiamont {
+
+    0%,
+    100% {
+        rotate: 0deg;
+    }
+
+    50% {
+        rotate: -90deg;
+    }
+
+    75% {
+        rotate: 15deg;
+    }
+}
+
+@keyframes lightAnimation {
+    0%, 100% {
+        transform: scaleX(1);
+        rotate: 0deg;
+    }
+
+    25% {
+        rotate: 5deg;
+    }
+
+    50% {
+        transform: scaleX(-1);
+    }
+
+    75% {
+        rotate: -5deg;
+    }
+}

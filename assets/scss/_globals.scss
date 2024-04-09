@@ -1,0 +1,59 @@
+body {
+    @include fluid-text(28, 16);
+
+    font-family: var(--font-family-base);
+    font-weight: 400;
+    line-height: 1.28;
+    color: var(--color-dark);
+}
+
+main {
+    height: 100%;
+    min-height: 100vh;
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+    transition-duration: var(--transition-duration);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 500;
+}
+
+h1 {
+    @include fluid-text(60, 43);
+}
+
+h2 {
+    @include fluid-text(40, 36);
+}
+
+h3 {
+    @include fluid-text(30, 26);
+}
+
+h4 {
+    @include fluid-text(20, 18);
+}
+
+p {
+    @include gradient;
+    text-transform: uppercase;
+}
+
+.container {
+    max-width: var(--container-width);
+    padding: 0 20px;
+}
