@@ -393,10 +393,11 @@ p {
 }
 .slots {
   position: relative;
-  background: url(../images/bg.jpg) no-repeat center;
+  background: url(../images/bg-2.jpg) no-repeat center;
   background-size: cover;
 }
 .slots__list {
+  position: relative;
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -410,12 +411,23 @@ p {
   -webkit-column-gap: 35px;
      -moz-column-gap: 35px;
           column-gap: 35px;
-  -webkit-transition: all 2s ease;
-  transition: all 2s ease;
 }
-.slots__list--winner {
-  background: url(/assets/images/star-bg.png) no-repeat center;
+.slots__list::before {
+  opacity: 0;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  translate: -50% 0;
+  width: 100%;
+  height: 100%;
+  background: url(../images/star-bg.png) no-repeat center;
   background-size: contain;
+  -webkit-transition: all 3s ease;
+  transition: all 3s ease;
+}
+.slots__list--winner::before {
+  opacity: 1;
 }
 .slots__item {
   position: relative;
@@ -691,6 +703,8 @@ p {
   margin: 0;
   font-size: clamp(36px, 8.0102040816vw, 157px);
   color: #ffffff;
+  -webkit-filter: drop-shadow(0px 10px 13px rgb(70, 0, 81));
+          filter: drop-shadow(0px 10px 13px rgb(70, 0, 81));
 }
 .podium__content img {
   margin-top: 120px;
@@ -716,7 +730,7 @@ p {
   content: "";
   position: absolute;
   top: -30%;
-  width: 50%;
+  width: 100%;
   height: 100%;
   background: url(../images/podium/Star.png) no-repeat center;
   -webkit-transition: all 2s ease;
@@ -725,10 +739,10 @@ p {
           animation: rotateDecor 10s linear infinite;
 }
 .podium__sofits::before {
-  left: -10%;
+  left: -40%;
 }
 .podium__sofits::after {
-  right: -10%;
+  right: -40%;
 }
 .podium__light {
   position: absolute;
