@@ -7,14 +7,13 @@
     background: url(../images/podium/podium-bg.jpg) no-repeat center;
     background-size: cover;
     transition: all 1s ease;
-    overflow: hidden;
 
 
     &::after,
     &::before {
         content: '';
         position: absolute;
-        top: -00%;
+        top: -100%;
         width: 50%;
         height: 100%;
         z-index: 1;
@@ -32,12 +31,11 @@
     }
 
     &__content {
-        padding: 150px 0;
         height: 100vh;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: end;
+        justify-content: center;
 
         & p {
             text-transform: lowercase;
@@ -55,6 +53,16 @@
 
         & img {
             margin-top: 120px;
+
+            @include monitor {
+                margin-top: 80px;
+                max-width: 400px;
+            }
+
+            @include tablet {
+                margin-top: 40px;
+                max-width: 300px;
+            }
         }
     }
 
@@ -75,6 +83,7 @@
         top: 0;
         right: 0;
         bottom: 0;
+        overflow: hidden;
 
 
         &::after,
@@ -85,9 +94,10 @@
             width: 100%;
             height: 100%;
             background: url(../images/podium/Star.png) no-repeat center;
+            background-size: contain;
             transition: all 2s ease;
 
-            animation: rotateDecor 10s linear infinite;
+            animation: rotateDecor 10s ease-in-out infinite;
         }
 
         &::before {
@@ -109,6 +119,18 @@
         align-items: start;
         justify-content: center;
         column-gap: 150px;
+
+        @include monitor {
+            column-gap: 60px;
+        }
+
+        @include desktop {
+            column-gap: 40px;
+        }
+
+        @include tablet {
+            column-gap: 0px;
+        }
 
         & img {
             max-height: 90%;

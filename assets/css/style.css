@@ -440,26 +440,53 @@ p {
   -webkit-animation-duration: 4s;
           animation-duration: 4s;
 }
+@media (max-width: 1600px) {
+  .slots__item:first-child .slots__decor {
+    bottom: 0;
+  }
+}
 .slots__item:nth-child(2) .slots__decor {
   bottom: 180px;
   rotate: -110deg;
   -webkit-animation-duration: 3.5s;
           animation-duration: 3.5s;
 }
+@media (max-width: 1600px) {
+  .slots__item:nth-child(2) .slots__decor {
+    bottom: 20px;
+  }
+}
 .slots__item:last-child .slots__decor {
   bottom: 100px;
   -webkit-animation-duration: 3s;
           animation-duration: 3s;
 }
+@media (max-width: 1600px) {
+  .slots__item:last-child .slots__decor {
+    bottom: 30px;
+  }
+}
 .slots__item.slots__item--winner .slots__prize {
-  margin-top: 120px;
-  font-size: clamp(32px, 2.8571428571vw, 56px);
+  margin-top: clamp(5.625rem, 7.5vw, 7.5rem);
   background-image: -webkit-gradient(linear, left top, left bottom, from(#EBFF00), color-stop(#96FF99), to(#0E9F45));
   background-image: linear-gradient(to bottom, #EBFF00, #96FF99, #0E9F45);
+  font-size: 56px;
 }
-@media (max-width: 1440px) {
+@media (max-width: 1600px) {
   .slots__item.slots__item--winner .slots__prize {
-    margin-top: clamp(20px, 7.1428571429vw, 140px);
+    font-size: 48px;
+  }
+}
+@media (max-width: 1280px) {
+  .slots__item.slots__item--winner .slots__prize {
+    font-size: 36px;
+    margin-top: clamp(3.75rem, -5.179rem + 14.29vw, 6.25rem);
+  }
+}
+@media (max-width: 1023px) {
+  .slots__item.slots__item--winner .slots__prize {
+    font-size: 26px;
+    margin-top: clamp(3.125rem, -3.082rem + 12.93vw, 5rem);
   }
 }
 .slots__item.slots__item--winner .slots__decor {
@@ -467,6 +494,12 @@ p {
   left: 60px;
   -webkit-animation: none;
           animation: none;
+}
+@media (max-width: 1600px) {
+  .slots__item.slots__item--winner .slots__decor {
+    bottom: 0;
+    left: 0;
+  }
 }
 .slots__item.slots__item--winner .slots__coin-list {
   opacity: 1;
@@ -488,11 +521,12 @@ p {
 .slots__bg::after {
   content: "";
   position: absolute;
-  bottom: 0px;
+  bottom: -5px;
   left: 0;
   width: 100%;
-  height: 64px;
-  background: url(../images/slot-bottom-light-single.png) no-repeat center;
+  height: 100%;
+  background: url(../images/slot-bottom-light-single.png) no-repeat bottom;
+  background-size: contain;
   -webkit-animation: lightingBrightness 3s ease-in-out infinite;
           animation: lightingBrightness 3s ease-in-out infinite;
 }
@@ -505,10 +539,28 @@ p {
           animation: rotateDecor 3s linear infinite;
 }
 .slots__decor.diamond {
+  top: auto;
   background: url(../images/diamant-bg.png) no-repeat center;
   background-size: cover;
   -webkit-animation: rotateDiamont 3s linear infinite;
           animation: rotateDiamont 3s linear infinite;
+}
+@media (max-width: 1600px) {
+  .slots__decor.diamond {
+    bottom: auto;
+  }
+}
+@media (max-width: 1600px) {
+  .slots__decor {
+    bottom: 30px;
+    left: 30px;
+  }
+}
+@media (max-width: 1023px) {
+  .slots__decor img {
+    max-width: 60px;
+    height: auto;
+  }
 }
 .slots__content {
   position: absolute;
@@ -526,16 +578,20 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 70px 0 160px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding-top: clamp(3.125rem, -0.625rem + 5vw, 4.375rem);
+  padding-bottom: clamp(7.5rem, 10vw, 10rem);
 }
-@media (max-width: 1600px) {
+@media (max-width: 1280px) {
   .slots__content {
-    padding-bottom: 140px;
+    padding-top: clamp(2.5rem, -1.964rem + 7.14vw, 3.75rem);
   }
 }
-@media (max-width: 1440px) {
+@media (max-width: 1023px) {
   .slots__content {
-    padding-bottom: clamp(140px, 7.1428571429vw, 160px);
+    padding-top: clamp(1.875rem, -0.194rem + 4.31vw, 2.5rem);
   }
 }
 .slots__period {
@@ -552,12 +608,20 @@ p {
   /* Делаем текст прозрачным */
   -webkit-filter: drop-shadow(0px 7px 4.8px rgba(0, 0, 0, 0.47));
           filter: drop-shadow(0px 7px 4.8px rgba(0, 0, 0, 0.47));
-  font-size: clamp(20px, 1.7346938776vw, 34px);
   background-image: -webkit-gradient(linear, left top, left bottom, from(#FBD714), to(#FA7712));
   background-image: linear-gradient(to bottom, #FBD714, #FA7712);
 }
+@media (max-width: 1280px) {
+  .slots__period {
+    font-size: clamp(1.25rem, -0.089rem + 2.14vw, 1.625rem);
+  }
+}
+@media (max-width: 1023px) {
+  .slots__period {
+    font-size: 18px;
+  }
+}
 .slots__timer {
-  margin-top: clamp(60px, 3.5714285714vw, 70px);
   /* Делаем текст прозрачным */
   background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#edb457));
   background-image: linear-gradient(to bottom, #ffffff, #edb457);
@@ -569,15 +633,16 @@ p {
   /* Делаем текст прозрачным */
   -webkit-filter: drop-shadow(0px 7px 4.8px rgba(0, 0, 0, 0.47));
           filter: drop-shadow(0px 7px 4.8px rgba(0, 0, 0, 0.47));
-  font-size: clamp(20px, 1.4285714286vw, 28px);
+  margin-top: clamp(3.125rem, -0.625rem + 5vw, 4.375rem);
+  font-size: clamp(1.25rem, 0.417rem + 1.11vw, 1.75rem);
 }
-@media (max-width: 1600px) {
+@media (max-width: 1023px) {
   .slots__timer {
-    margin-top: clamp(30px, 4.0816326531vw, 80px);
+    margin-top: clamp(1.875rem, -2.263rem + 8.62vw, 3.125rem);
+    font-size: 14px;
   }
 }
 .slots__prize {
-  margin-top: 130px;
   /* Делаем текст прозрачным */
   background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#edb457));
   background-image: linear-gradient(to bottom, #ffffff, #edb457);
@@ -589,19 +654,32 @@ p {
   /* Делаем текст прозрачным */
   -webkit-filter: drop-shadow(0px 7px 4.8px rgba(0, 0, 0, 0.47));
           filter: drop-shadow(0px 7px 4.8px rgba(0, 0, 0, 0.47));
-  font-size: clamp(20px, 2.1428571429vw, 42px);
+  margin-top: clamp(5.625rem, -1.875rem + 10vw, 8.125rem);
+  font-size: 48px;
   -webkit-transition: font-size 3s ease, color 3s ease;
   transition: font-size 3s ease, color 3s ease;
 }
-@media (max-width: 1440px) {
+@media (max-width: 1600px) {
   .slots__prize {
-    margin-top: clamp(40px, 7.6530612245vw, 150px);
+    font-size: 40px;
+  }
+}
+@media (max-width: 1280px) {
+  .slots__prize {
+    font-size: 32px;
+    margin-top: clamp(3.75rem, -5.179rem + 14.29vw, 6.25rem);
+  }
+}
+@media (max-width: 1023px) {
+  .slots__prize {
+    font-size: 24px;
+    margin-top: clamp(3.125rem, -3.082rem + 12.93vw, 5rem);
   }
 }
 .slots__coin-list {
   opacity: 0;
   max-width: 100px;
-  margin-top: auto;
+  margin-top: clamp(1.25rem, -6.25rem + 10vw, 3.75rem);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -617,6 +695,17 @@ p {
   -webkit-transition: all 3s ease;
   transition: all 3s ease;
 }
+@media (max-width: 1280px) {
+  .slots__coin-list {
+    margin-top: clamp(1.563rem, -1.786rem + 5.36vw, 2.5rem);
+    max-width: 60px;
+  }
+}
+@media (max-width: 1023px) {
+  .slots__coin-list {
+    margin-top: clamp(0.625rem, -3.513rem + 8.62vw, 1.875rem);
+  }
+}
 .slots__coin-item {
   width: 33%;
   display: -webkit-box;
@@ -631,6 +720,12 @@ p {
 }
 .slots__coin-item:nth-child(1), .slots__coin-item:nth-child(2) {
   width: 34%;
+  margin-bottom: -20px;
+}
+@media (max-width: 1280px) {
+  .slots__coin-item:nth-child(1), .slots__coin-item:nth-child(2) {
+    margin-bottom: -10px;
+  }
 }
 .slots__coin-item svg {
   max-width: 30px;
@@ -646,12 +741,11 @@ p {
   background-size: cover;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
-  overflow: hidden;
 }
 .podium::after, .podium::before {
   content: "";
   position: absolute;
-  top: 0%;
+  top: -100%;
   width: 50%;
   height: 100%;
   z-index: 1;
@@ -666,7 +760,6 @@ p {
   right: var(--after-right, 0);
 }
 .podium__content {
-  padding: 150px 0;
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -678,9 +771,9 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .podium__content p {
   text-transform: lowercase;
@@ -709,6 +802,18 @@ p {
 .podium__content img {
   margin-top: 120px;
 }
+@media (max-width: 1600px) {
+  .podium__content img {
+    margin-top: 80px;
+    max-width: 400px;
+  }
+}
+@media (max-width: 1023px) {
+  .podium__content img {
+    margin-top: 40px;
+    max-width: 300px;
+  }
+}
 .podium__curtain {
   position: absolute;
   left: 0;
@@ -725,6 +830,7 @@ p {
   top: 0;
   right: 0;
   bottom: 0;
+  overflow: hidden;
 }
 .podium__sofits::after, .podium__sofits::before {
   content: "";
@@ -733,10 +839,11 @@ p {
   width: 100%;
   height: 100%;
   background: url(../images/podium/Star.png) no-repeat center;
+  background-size: contain;
   -webkit-transition: all 2s ease;
   transition: all 2s ease;
-  -webkit-animation: rotateDecor 10s linear infinite;
-          animation: rotateDecor 10s linear infinite;
+  -webkit-animation: rotateDecor 10s ease-in-out infinite;
+          animation: rotateDecor 10s ease-in-out infinite;
 }
 .podium__sofits::before {
   left: -40%;
@@ -762,6 +869,27 @@ p {
   -webkit-column-gap: 150px;
      -moz-column-gap: 150px;
           column-gap: 150px;
+}
+@media (max-width: 1600px) {
+  .podium__light {
+    -webkit-column-gap: 60px;
+       -moz-column-gap: 60px;
+            column-gap: 60px;
+  }
+}
+@media (max-width: 1280px) {
+  .podium__light {
+    -webkit-column-gap: 40px;
+       -moz-column-gap: 40px;
+            column-gap: 40px;
+  }
+}
+@media (max-width: 1023px) {
+  .podium__light {
+    -webkit-column-gap: 0px;
+       -moz-column-gap: 0px;
+            column-gap: 0px;
+  }
 }
 .podium__light img {
   max-height: 90%;
@@ -868,6 +996,11 @@ p {
   width: 80px; /* Ширина изображения дождя */
   height: auto; /* Высота автоматически определяется пропорционально ширине */
   top: -100%; /* Начальная позиция за пределами контейнера */
+}
+@media (max-width: 1023px) {
+  .raindrop {
+    width: 40px;
+  }
 }
 
 .header {
