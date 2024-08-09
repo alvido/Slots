@@ -7,17 +7,19 @@
     background: url(../images/podium/podium-bg.jpg) no-repeat center;
     background-size: cover;
     transition: all 1s ease;
+    overflow-x: hidden;
 
 
     &::after,
     &::before {
         content: '';
         position: absolute;
-        top: -100%;
+        top: -00%;
         width: 50%;
         height: 100%;
         z-index: 1;
-        background: url(../images/podium/photoroom.png) no-repeat center;
+        background: url(../images/podium/photoroom.png) no-repeat top;
+        background-size: cover;
         transition: all 2s ease;
     }
 
